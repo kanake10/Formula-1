@@ -18,7 +18,7 @@ import com.example.formula1.domain.models.Driver
  */
 
 @Composable
-fun DriversListScreen(drivers: Driver) {
+fun DriversListItem(drivers: Driver) {
     Row(
         modifier = Modifier
             .fillMaxWidth()

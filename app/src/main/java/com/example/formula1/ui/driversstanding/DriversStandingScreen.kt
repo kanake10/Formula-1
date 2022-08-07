@@ -29,7 +29,7 @@ fun DriversStandingScreen(
     Box(modifier = Modifier.fillMaxSize()) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(state.drivers) { drivers ->
-                DriversListScreen(
+                DriversListItem(
                     drivers = drivers,
                 )
             }
