@@ -1,6 +1,6 @@
 package com.example.formula1.domain.usecases
 
-import com.example.formula1.data.network.dto.toDriver
+import com.example.formula1.data.network.mapper.toDriver
 import com.example.formula1.domain.models.Driver
 import com.example.formula1.domain.repo.Formula1Repository
 import com.example.formula1.util.Resource
