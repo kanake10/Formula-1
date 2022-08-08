@@ -11,6 +11,4 @@ class Formula1RepositoryImpl @Inject constructor(
     override suspend fun getDriverStandings(): List<DriversDto> {
         return api.getDriverStanding()
     }
-
-
 }
