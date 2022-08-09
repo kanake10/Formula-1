@@ -1,6 +1,7 @@
 package com.example.formula1.di
 
 import com.example.formula1.data.network.Formula1Api
+import com.example.formula1.data.network.Interceptor
 import com.example.formula1.data.network.repo.Formula1RepositoryImpl
 import com.example.formula1.domain.repo.Formula1Repository
 import com.example.formula1.util.Constants
@@ -24,6 +25,7 @@ object AppModule {
     fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
+            .addInterceptor(Interceptor())
             .callTimeout(15, TimeUnit.SECONDS)
             .connectTimeout(15, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
