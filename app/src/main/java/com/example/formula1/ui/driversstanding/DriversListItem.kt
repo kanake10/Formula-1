@@ -17,10 +17,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.formula1.domain.models.Driver
 
-/**
- *
- * create txt views for car and points
- */
 
 @Composable
 fun DriversListItem(drivers: Driver) {
