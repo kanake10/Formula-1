@@ -1,4 +1,4 @@
-package com.example.formula1.data.network.dto
+package com.example.formula1.feature_driver_standing.data.remote.dto
 
 data class FastestLap(
     val AverageSpeed: AverageSpeed,

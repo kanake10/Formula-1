@@ -1,7 +1,7 @@
 package com.example.formula1.ui.util
 
-import com.example.formula1.domain.models.Current
-import com.example.formula1.domain.models.Driver
+import com.example.formula1.feature_driver_standing.domain.models.Current
+import com.example.formula1.feature_driver_standing.domain.models.Driver
 
 data class Formula1State(
     val isLoading: Boolean = false,

@@ -1,7 +1,6 @@
-package com.example.formula1.data.network.dto
+package com.example.formula1.feature_driver_standing.domain.models
 
-
-data class DriversDto(
+data class Driver(
     val Car: String,
     val Country: String,
     val Name: String,

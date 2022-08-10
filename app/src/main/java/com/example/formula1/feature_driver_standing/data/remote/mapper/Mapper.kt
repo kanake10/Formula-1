@@ -1,9 +1,9 @@
-package com.example.formula1.data.network.mapper
+package com.example.formula1.feature_driver_standing.data.remote.mapper
 
-import com.example.formula1.data.network.dto.CurrentDto
-import com.example.formula1.data.network.dto.DriversDto
-import com.example.formula1.domain.models.Current
-import com.example.formula1.domain.models.Driver
+import com.example.formula1.feature_driver_standing.data.remote.dto.CurrentDto
+import com.example.formula1.feature_driver_standing.data.remote.dto.DriversDto
+import com.example.formula1.feature_driver_standing.domain.models.Current
+import com.example.formula1.feature_driver_standing.domain.models.Driver
 
 fun DriversDto.toDriver(): Driver {
     return Driver(

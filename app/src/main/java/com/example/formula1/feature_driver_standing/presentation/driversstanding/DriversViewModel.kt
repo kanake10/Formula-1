@@ -1,10 +1,10 @@
-package com.example.formula1.ui.driversstanding
+package com.example.formula1.feature_driver_standing.presentation.driversstanding
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.formula1.domain.usecases.DriversStandingUseCase
+import com.example.formula1.feature_driver_standing.domain.usecase.DriversStandingUseCase
 import com.example.formula1.ui.util.Formula1State
 import com.example.formula1.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
