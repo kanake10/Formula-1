@@ -1,4 +1,6 @@
-package com.example.formula1.feature_driver_standing.data.remote.dto
+package com.example.formula1.feature_current_standing.data.dto
+
+import com.example.formula1.feature_current_standing.data.dto.Result
 
 data class CurrentDto(
     val Circuit: Circuit,
