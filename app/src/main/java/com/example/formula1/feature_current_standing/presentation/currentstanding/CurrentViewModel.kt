@@ -1,10 +1,10 @@
-package com.example.formula1.ui.currentstanding
+package com.example.formula1.feature_current_standing.presentation.currentstanding
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.formula1.domain.usecases.CurrentStandingUseCase
+import com.example.formula1.feature_current_standing.domain.usecase.CurrentStandingUseCase
 import com.example.formula1.ui.util.Formula1State
 import com.example.formula1.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
