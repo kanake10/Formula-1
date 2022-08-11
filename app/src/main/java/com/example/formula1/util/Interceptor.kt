@@ -1,4 +1,4 @@
-package com.example.formula1.data.network
+package com.example.formula1.util
 
 import okhttp3.Interceptor
 import okhttp3.Response
