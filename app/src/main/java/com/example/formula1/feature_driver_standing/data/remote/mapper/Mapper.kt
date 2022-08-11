@@ -1,8 +1,6 @@
 package com.example.formula1.feature_driver_standing.data.remote.mapper
 
-import com.example.formula1.feature_driver_standing.data.remote.dto.CurrentDto
 import com.example.formula1.feature_driver_standing.data.remote.dto.DriversDto
-import com.example.formula1.feature_driver_standing.domain.models.Current
 import com.example.formula1.feature_driver_standing.domain.models.Driver
 
 fun DriversDto.toDriver(): Driver {
@@ -15,14 +13,3 @@ fun DriversDto.toDriver(): Driver {
     )
 }
 
-
-fun CurrentDto.toCurrent(): Current {
-    return Current(
-        Circuit =Circuit,
-        Results = Results,
-        raceName = raceName,
-        round = round,
-        season = season,
-        url = url
-    )
-}

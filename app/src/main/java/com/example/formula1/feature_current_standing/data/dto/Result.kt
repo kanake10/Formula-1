@@ -1,4 +1,4 @@
-package com.example.formula1.feature_driver_standing.data.remote.dto
+package com.example.formula1.feature_current_standing.data.dto
 
 data class Result(
     val Constructor: Constructor,
@@ -13,3 +13,5 @@ data class Result(
     val positionText: String,
     val status: String
 )
+
+
