@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 
@@ -16,6 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.formula1.feature_driver_standing.domain.models.Driver
+import com.ramcosta.composedestinations.annotation.Destination
 
 
 @Composable
@@ -25,9 +27,9 @@ fun DriversListItem(drivers: Driver) {
             .fillMaxWidth()
             .padding(20.dp),
         horizontalArrangement = Arrangement.SpaceBetween
-    ){
+    ) {
         Text(
-            text = "${drivers.POS}. ${drivers.Name} (${drivers.Country})",
+            text = "${drivers.POS}     ${drivers.Name} (${drivers.Country})",
             style = MaterialTheme.typography.body1,
             overflow = TextOverflow.Ellipsis
         )
@@ -39,4 +41,5 @@ fun DriversListItem(drivers: Driver) {
             modifier = Modifier.align(CenterVertically)
         )
     }
+
 }
