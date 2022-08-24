@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.example.formula1.feature_driver_standing.presentation.driversstanding.NavGraphs
+import com.example.formula1.NavGraphs
 import com.example.formula1.ui.theme.Formula1Theme
 import com.ramcosta.composedestinations.DestinationsNavHost
 import dagger.hilt.android.AndroidEntryPoint
