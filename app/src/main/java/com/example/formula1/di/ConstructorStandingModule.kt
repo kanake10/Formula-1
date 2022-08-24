@@ -4,21 +4,14 @@ import com.example.formula1.feature_constructor_standing.data.api.ConstructorApi
 import com.example.formula1.feature_constructor_standing.data.repository.ConstructorStandingRepositoryImpl
 import com.example.formula1.feature_constructor_standing.domain.repo.ConstructorStandingRepository
 import com.example.formula1.feature_constructor_standing.domain.usecase.ConstructorStandingUseCase
-import com.example.formula1.feature_driver_standing.data.repository.DriverStandingRepositoryImpl
-import com.example.formula1.feature_driver_standing.domain.repo.DriverStandingRepository
-import com.example.formula1.util.Constants
 import com.example.formula1.util.Constants.CONSTRUCTOR_BASE_URL
-import com.example.formula1.util.ConstructorInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
-import java.util.concurrent.TimeUnit
 
 @Module
 @InstallIn(SingletonComponent::class)
