@@ -16,7 +16,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.formula1.feature_driver_standing.domain.models.Driver
-import com.ramcosta.composedestinations.annotation.Destination
 
 
 @Composable

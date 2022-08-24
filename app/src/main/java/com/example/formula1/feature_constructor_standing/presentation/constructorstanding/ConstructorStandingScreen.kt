@@ -20,7 +20,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-@Destination(start = true)
+@Destination
 fun ConstructorStandingScreen(
     viewModel : ConstructorViewModel = hiltViewModel()
 ){
