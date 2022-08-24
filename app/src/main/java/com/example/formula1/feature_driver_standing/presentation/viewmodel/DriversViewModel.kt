@@ -1,4 +1,4 @@
-package com.example.formula1.feature_driver_standing.presentation.driversstanding
+package com.example.formula1.feature_driver_standing.presentation.viewmodel
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf

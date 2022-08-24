@@ -15,13 +15,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.formula1.feature_driver_standing.presentation.viewmodel.DriversViewModel
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
 @Composable
-@Destination(start = true)
+@Destination
 fun DriversStandingScreen(
-    navigator: DestinationsNavigator,
     viewModel: DriversViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
