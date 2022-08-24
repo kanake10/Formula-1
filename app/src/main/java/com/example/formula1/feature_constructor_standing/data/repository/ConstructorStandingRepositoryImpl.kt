@@ -6,7 +6,7 @@ import com.example.formula1.feature_constructor_standing.data.dtos.ResultDto
 import com.example.formula1.feature_constructor_standing.domain.repo.ConstructorStandingRepository
 import javax.inject.Inject
 
-class constructorStandingRepositoryImpl @Inject constructor(
+class ConstructorStandingRepositoryImpl @Inject constructor(
     private val constructorApi: ConstructorApi
 ): ConstructorStandingRepository {
     override suspend fun getConstructorStanding(): ConstructorDto {

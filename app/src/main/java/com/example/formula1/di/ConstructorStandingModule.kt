@@ -1,16 +1,14 @@
 package com.example.formula1.di
 
 import com.example.formula1.feature_constructor_standing.data.api.ConstructorApi
-import com.example.formula1.feature_constructor_standing.data.repository.constructorStandingRepositoryImpl
+import com.example.formula1.feature_constructor_standing.data.repository.ConstructorStandingRepositoryImpl
 import com.example.formula1.feature_constructor_standing.domain.repo.ConstructorStandingRepository
 import com.example.formula1.feature_constructor_standing.domain.usecase.ConstructorStandingUseCase
-import com.example.formula1.feature_driver_standing.data.remote.DriverStandingApi
 import com.example.formula1.feature_driver_standing.data.repository.DriverStandingRepositoryImpl
 import com.example.formula1.feature_driver_standing.domain.repo.DriverStandingRepository
 import com.example.formula1.util.Constants
 import com.example.formula1.util.Constants.CONSTRUCTOR_BASE_URL
 import com.example.formula1.util.ConstructorInterceptor
-import com.example.formula1.util.Interceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,7 +39,7 @@ object ConstructorStandingModule {
     fun provideConstructorRepository(
         api: ConstructorApi
     ): ConstructorStandingRepository {
-        return constructorStandingRepositoryImpl(
+        return ConstructorStandingRepositoryImpl(
             api
         )
     }

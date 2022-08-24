@@ -10,7 +10,7 @@ interface ConstructorApi {
 
     @Headers(
         "X-RapidAPI-Key: 7b5273655emsh4047f04c6f9eaa7p1924a3jsnce0de28823dc",
-        "X-RapidAPI-Key: formula-1-standings.p.rapidapi.com",
+        "X-RapidAPI-Host: formula-1-standings.p.rapidapi.com"
     )
     @GET(CONSTRUCTOR_ENDPOINT)
     suspend fun getConstructorStanding(
