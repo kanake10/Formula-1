@@ -10,6 +10,7 @@ data class Formula1State(
     val isLoading: Boolean = false,
     val drivers: List<Driver> = emptyList(),
     val constructor: List<Result> = emptyList(),
+    val isRefreshing: Boolean = false,
     val grandpix: List<GrandPix> = emptyList(),
     val error: String = ""
 )

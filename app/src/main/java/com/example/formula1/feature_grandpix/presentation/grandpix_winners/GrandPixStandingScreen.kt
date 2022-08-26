@@ -19,7 +19,6 @@ import com.example.formula1.feature_grandpix.presentation.viewmodel.GrandPixView
 import com.ramcosta.composedestinations.annotation.Destination
 
 @Composable
-@Destination
 fun GrandPixStandingScreen(
     viewModel: GrandPixViewModel = hiltViewModel()
 ) {

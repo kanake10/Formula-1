@@ -9,8 +9,11 @@ import com.example.formula1.ui.util.Formula1State
 import com.example.formula1.util.Formula1Event
 import com.example.formula1.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -21,15 +24,18 @@ class DriversViewModel @Inject constructor(
     private val _state = mutableStateOf(Formula1State())
     val state: State<Formula1State> = _state
 
+    private val _isRefresh = MutableStateFlow(false)
+    val isRefresh: StateFlow<Boolean> = _isRefresh
+
     init {
         getDriversStandings()
     }
 
-    fun Refresh(event: Formula1Event){
-        when(event){
-            is Formula1Event.Refresh -> {
-                getDriversStandings()
-            }
+    fun refresh() {
+        viewModelScope.launch {
+            _isRefresh.emit(true)
+            getDriversStandings()
+            _isRefresh.emit(false)
         }
     }
 
