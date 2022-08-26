@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.formula1.feature_grandpix.domain.usecase.GetGrandPixUseCase
 import com.example.formula1.ui.util.Formula1State
+import com.example.formula1.util.Formula1Event
 import com.example.formula1.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -22,6 +23,14 @@ class GrandPixViewModel @Inject constructor(
 
     init {
         getGrandPix()
+    }
+
+    fun Refresh(event: Formula1Event){
+        when(event){
+            is Formula1Event.Refresh -> {
+                getGrandPix()
+            }
+        }
     }
 
     private fun getGrandPix() {
