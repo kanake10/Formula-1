@@ -10,22 +10,32 @@ import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.formula1.feature_driver_standing.presentation.viewmodel.DriversViewModel
-import com.ramcosta.composedestinations.annotation.Destination
-import com.ramcosta.composedestinations.navigation.DestinationsNavigator
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 
 @Composable
-@Destination
 fun DriversStandingScreen(
     viewModel: DriversViewModel = hiltViewModel()
 ) {
+
     val state = viewModel.state.value
+    val isRefreshing by viewModel.isRefresh.collectAsState()
+
     Box(modifier = Modifier.fillMaxSize()) {
+
+
+        SwipeRefresh(
+            state = rememberSwipeRefreshState(isRefreshing = isRefreshing),
+            onRefresh = { viewModel.refresh() }){}
+
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(state.drivers) { drivers ->
                 DriversListItem(

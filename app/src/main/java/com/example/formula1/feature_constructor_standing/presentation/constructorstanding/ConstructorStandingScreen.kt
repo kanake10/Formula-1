@@ -1,5 +1,6 @@
 package com.example.formula1.feature_constructor_standing.presentation.constructorstanding
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,23 +11,32 @@ import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.formula1.feature_constructor_standing.presentation.viewmodel.ConstructorViewModel
+import com.example.formula1.ui.theme.DarkGray
 import com.ramcosta.composedestinations.annotation.Destination
 import org.koin.androidx.compose.getViewModel
 
 @Composable
-@Destination
 fun ConstructorStandingScreen(
     viewModel : ConstructorViewModel = hiltViewModel()
 ){
     val state = viewModel.state.value
-    Box(modifier = Modifier.fillMaxSize()) {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
+    val isRefreshing by viewModel.isRefresh.collectAsState()
+
+    Box(
+        modifier = Modifier
+            .background(DarkGray)
+            .fillMaxSize()
+            .padding(12.dp)
+    ) {
+        LazyColumn() {
             items(state.constructor) { constructor ->
                 ConstructorListItem(
                     constructor = constructor,
