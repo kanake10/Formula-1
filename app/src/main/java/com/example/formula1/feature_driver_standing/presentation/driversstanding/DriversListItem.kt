@@ -16,6 +16,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.formula1.feature_driver_standing.domain.models.Driver
+import com.example.formula1.ui.TopBar
+import com.example.formula1.ui.theme.Teal200
+import com.example.formula1.ui.theme.TextWhite
 
 
 @Composable
@@ -29,11 +32,12 @@ fun DriversListItem(drivers: Driver) {
         Text(
             text = "${drivers.POS}     ${drivers.Name} (${drivers.Country})",
             style = MaterialTheme.typography.body1,
-            overflow = TextOverflow.Ellipsis
+            color = TextWhite
         )
         Text(
             text = "${drivers.PTS} PTS",
             fontStyle = FontStyle.Italic,
+            color = Teal200,
             textAlign = TextAlign.End,
             style = MaterialTheme.typography.body2,
             modifier = Modifier.align(CenterVertically)

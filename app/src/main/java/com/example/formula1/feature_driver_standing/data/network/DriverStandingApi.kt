@@ -1,9 +1,8 @@
-package com.example.formula1.feature_driver_standing.data.remote
+package com.example.formula1.feature_driver_standing.data.network
 
-import com.example.formula1.feature_driver_standing.data.remote.dto.DriversDto
+import com.example.formula1.feature_driver_standing.data.dto.DriversDto
 import com.example.formula1.util.Constants
 import retrofit2.http.GET
-import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface DriverStandingApi {

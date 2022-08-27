@@ -1,6 +1,6 @@
 package com.example.formula1.di
 
-import com.example.formula1.feature_driver_standing.data.remote.DriverStandingApi
+import com.example.formula1.feature_driver_standing.data.network.DriverStandingApi
 import com.example.formula1.feature_driver_standing.data.repository.DriverStandingRepositoryImpl
 import com.example.formula1.feature_driver_standing.domain.repo.DriverStandingRepository
 import com.example.formula1.util.Constants
