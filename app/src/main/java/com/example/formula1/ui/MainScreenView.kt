@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.DarkGray
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.sp
@@ -12,6 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.formula1.R
+import com.example.formula1.ui.theme.Teal200
 
 @Composable
 fun MainScreenView(){
@@ -27,12 +29,12 @@ fun MainScreenView(){
 @Composable
 fun BottomNavigation(navController: NavController) {
     val items = listOf(
-        BottomNavItem.Drivers,
         BottomNavItem.GrandPix,
+        BottomNavItem.Drivers,
         BottomNavItem.Constructors
     )
     BottomNavigation(
-        backgroundColor = colorResource(id = R.color.dark_gray),
+        backgroundColor = colorResource(id = R.color.black),
         contentColor = Color.White
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -43,7 +45,7 @@ fun BottomNavigation(navController: NavController) {
                 label = { Text(text = item.title,
                     fontSize = 9.sp) },
                 selectedContentColor = Color.White,
-                unselectedContentColor = Color.Black.copy(0.4f),
+                unselectedContentColor = White.copy(0.4f),
                 alwaysShowLabel = true,
                 selected = currentRoute == item.screen_route,
                 onClick = {

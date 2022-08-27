@@ -10,7 +10,7 @@ import com.example.formula1.feature_grandpix.presentation.grandpix_winners.Grand
 
 @Composable
 fun NavigationGraph(navController: NavHostController) {
-    NavHost(navController, startDestination = BottomNavItem.Drivers.screen_route) {
+    NavHost(navController, startDestination = BottomNavItem.GrandPix.screen_route) {
         composable(BottomNavItem.Drivers.screen_route) {
             DriversStandingScreen()
         }
