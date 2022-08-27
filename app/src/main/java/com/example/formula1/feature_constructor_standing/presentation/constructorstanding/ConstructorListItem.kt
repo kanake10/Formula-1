@@ -15,6 +15,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.example.formula1.feature_constructor_standing.domain.model.Result
+import com.example.formula1.ui.theme.Teal200
+import com.example.formula1.ui.theme.TextWhite
 
 @Composable
 fun ConstructorListItem(constructor : Result) {
@@ -27,11 +29,12 @@ fun ConstructorListItem(constructor : Result) {
             Text(
                 text = "${constructor.position}. ${constructor.teamName}",
                 style = MaterialTheme.typography.body1,
-                overflow = TextOverflow.Ellipsis
+                color = TextWhite
             )
             Text(
                 text = "${constructor.points} PTS",
                 fontStyle = FontStyle.Italic,
+                color = Teal200,
                 textAlign = TextAlign.End,
                 style = MaterialTheme.typography.body2,
                 modifier = Modifier.align(Alignment.CenterVertically)
