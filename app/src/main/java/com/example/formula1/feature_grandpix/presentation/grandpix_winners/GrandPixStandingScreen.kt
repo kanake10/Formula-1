@@ -1,21 +1,25 @@
 package com.example.formula1.feature_grandpix.presentation.grandpix_winners
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.formula1.feature_grandpix.presentation.viewmodel.GrandPixViewModel
+import com.example.formula1.ui.TopBar
+import com.example.formula1.ui.theme.DarkGray
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.ramcosta.composedestinations.annotation.Destination
 
 @Composable
@@ -23,15 +27,34 @@ fun GrandPixStandingScreen(
     viewModel: GrandPixViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
-    Box(modifier = Modifier.fillMaxSize()) {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(state.grandpix) { grandpix ->
-                GrandPixListItem(
-                    grandpix = grandpix,
-                )
+    val isRefreshing by viewModel.isRefresh.collectAsState()
+    Box(
+        modifier = Modifier
+            .background(DarkGray)
+            .fillMaxSize()
+            .padding(12.dp)
+    ) {
+        Column {
+            TopBar(title = "GrandPix Winners")
+            Spacer(Modifier.height(15.dp))
+            SwipeRefresh(
+                state = rememberSwipeRefreshState(isRefreshing = isRefreshing),
+                onRefresh = { viewModel.refresh() }) {
+                LazyColumn(modifier = Modifier.fillMaxSize()) {
+                    items(state.grandpix) { grandpix ->
+                        GrandPixListItem(
+                            grandpix = grandpix,
+                        )
+                        Spacer(Modifier.height(15.dp))
+                    }
+                }
+
             }
+
+
         }
-        if(state.error.isNotBlank()) {
+
+        if (state.error.isNotBlank()) {
             Text(
                 text = state.error,
                 color = MaterialTheme.colors.error,
@@ -42,9 +65,15 @@ fun GrandPixStandingScreen(
                     .align(Alignment.Center)
             )
         }
-        if(state.isLoading) {
+        if (state.isLoading) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         }
     }
 }
+
+
+
+
+
+
 
