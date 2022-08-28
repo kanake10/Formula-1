@@ -48,10 +48,7 @@ fun GrandPixStandingScreen(
                         Spacer(Modifier.height(15.dp))
                     }
                 }
-
             }
-
-
         }
 
         if (state.error.isNotBlank()) {
