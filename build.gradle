@@ -1,9 +1,15 @@
 buildscript {
     ext {
         compose_version = '1.1.0'
+        versionsPluginVersion = "0.29.0"
+        detektVersion = "1.17.0"
+        ktlintPluginVersion = "11.0.0"
     }
     dependencies {
         classpath "com.google.dagger:hilt-android-gradle-plugin:2.38.1"
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:$ktlintPluginVersion"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detektVersion"
+        classpath "com.github.ben-manes:gradle-versions-plugin:$versionsPluginVersion"
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
@@ -12,6 +18,20 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
 }
 
+apply from: "scripts/githooks.gradle"
+
+subprojects {
+    apply from: "../scripts/ktlint.gradle"
+    apply from: "../scripts/detekt.gradle"
+    apply from: "../scripts/versionsplugin.gradle"
+}
+
+
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+afterEvaluate {
+    // We install the hook at the first occasion
+    tasks['clean'].dependsOn installGitHooks
 }
